@@ -89,7 +89,7 @@ astrbot_plugin_tool_guard/
 
 ### 瑞幸 MCP 示例配置
 
-> **注意：** 以下工具前缀仅为示例。MCP 工具在 AstrBot 中通常直接使用 MCP 服务器返回的原始工具名，**不保证** 一定带有 `luckin_` 等前缀。请先开启 `debug_log` 确认实际名称。
+> **注意：** 以下工具前缀仅为示例(瑞幸咖啡相关tools)。MCP 工具在 AstrBot 中通常直接使用 MCP 服务器返回的原始工具名。请先开启 `debug_log` 确认实际名称。
 
 ```json
 {
@@ -99,8 +99,14 @@ astrbot_plugin_tool_guard/
   ],
   "tool_match_mode": "prefix",
   "restricted_tools": [
-    "luckin_",
-    "lkcoffee_"
+    "queryShopList",
+    "searchProductForMcp",
+    "switchProduct",
+    "queryProductDetailInfo",
+    "previewOrder",
+    "createOrder",
+    "queryOrderDetailInfo",
+    "cancelOrder"
   ],
   "notify_when_blocked": true,
   "blocked_message": "该工具仅允许指定用户在私聊中使用。",
