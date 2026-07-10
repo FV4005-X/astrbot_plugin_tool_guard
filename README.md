@@ -4,7 +4,7 @@
 
 AstrBot 插件：根据会话类型、用户白名单和工具名称，在 LLM 请求前隐藏受限 MCP/LLM 工具，并在工具执行前进行二次权限校验。
 
-当前版本：v1.0.1
+当前版本：v1.0.2
 
 ## 插件简介
 
@@ -51,6 +51,7 @@ astrbot_plugin_tool_guard/
 ├── tool_block.py        # 工具执行期拦截包装器
 ├── _conf_schema.json    # WebUI 配置 Schema
 ├── metadata.yaml        # 插件元数据
+├── CHANGELOG.md         # 版本更新日志
 ├── requirements.txt     # 无第三方依赖，保留空文件
 ├── README.md
 ├── LICENSE

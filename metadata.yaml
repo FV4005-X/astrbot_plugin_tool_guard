@@ -2,7 +2,7 @@ name: astrbot_plugin_tool_guard
 display_name: MCP 工具权限控制
 desc: 根据会话类型、用户白名单和工具名称，在 LLM 请求前隐藏受限 MCP/LLM 工具，并在工具执行前进行权限校验。
 short_desc: 限制指定 MCP/LLM 工具仅供白名单用户私聊使用
-version: v1.0.0
+version: v1.0.2
 author: FV4005-X
 repo: https://github.com/FV4005-X/astrbot_plugin_tool_guard
 astrbot_version: ">=4.23.1,<5"
