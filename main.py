@@ -11,7 +11,7 @@ from astrbot.core.agent.tool import FunctionTool
 from .auth import is_authorized
 from .request_filter import ToolFilterResult, filter_request_tools
 from .runtime import RUNTIME, update_runtime
-from .tool_block import ensure_tool_execution_guard
+from .tool_block import ensure_tool_execution_guard, restore_all_tool_execution_guards
 
 # AstrBot sorts hook handlers by descending priority (larger number runs first).
 HOOK_PRIORITY = 1000
@@ -45,6 +45,10 @@ class ToolGuardPlugin(Star):
     async def initialize(self) -> None:
         """Refresh runtime config when the plugin is loaded or reloaded."""
         self._reload_runtime_config()
+
+    async def terminate(self) -> None:
+        """Restore shared tool entry points when the plugin is unloaded."""
+        restore_all_tool_execution_guards()
 
     def _is_sender_authorized(self, event: AstrMessageEvent) -> bool:
         """Return whether the current sender may use restricted tools."""

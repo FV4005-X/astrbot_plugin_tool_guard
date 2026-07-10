@@ -35,7 +35,7 @@ def test_empty_rules_do_not_match() -> None:
 
 
 def test_invalid_regex_is_ignored() -> None:
-    matcher = ToolMatcher.from_config("regex", ["("[))
+    matcher = ToolMatcher.from_config("regex", ["("])
     assert matcher.match_tool_name("anything") is False
     assert matcher.invalid_regexes == ("([",)
 
