@@ -1,0 +1,48 @@
+{
+  "enabled": {
+    "description": "是否启用插件",
+    "type": "bool",
+    "default": true
+  },
+  "allowed_users": {
+    "description": "允许使用受限工具的发送者 ID 白名单",
+    "type": "list",
+    "hint": "留空表示所有用户均不可使用受限工具。ID 会自动转为字符串并去除首尾空格。",
+    "default": []
+  },
+  "tool_match_mode": {
+    "description": "受限工具名称匹配模式",
+    "type": "string",
+    "options": ["exact", "prefix", "contains", "regex"],
+    "default": "prefix",
+    "hint": "exact=完整匹配，prefix=前缀匹配，contains=包含匹配，regex=正则匹配（默认忽略大小写）。"
+  },
+  "restricted_tools": {
+    "description": "受限工具名称、前缀或正则表达式列表",
+    "type": "list",
+    "default": [],
+    "hint": "建议先开启 debug_log，在日志中确认 MCP 工具的实际名称后再填写完整名称或唯一前缀。"
+  },
+  "blocked_message": {
+    "description": "执行前拦截受限工具时发送给用户的提示",
+    "type": "string",
+    "default": "该工具仅允许指定用户在私聊中使用。"
+  },
+  "notify_when_blocked": {
+    "description": "执行前拦截受限工具时是否向当前会话发送提示",
+    "type": "bool",
+    "default": true,
+    "hint": "LLM 请求前隐藏工具时不会发送提示，避免群聊普通对话产生干扰。"
+  },
+  "debug_log": {
+    "description": "是否输出调试日志",
+    "type": "bool",
+    "default": false,
+    "hint": "开启后会记录消息类型、sender ID、过滤前后工具名等信息，不会记录 Token、Cookie 或完整敏感参数。"
+  },
+  "fail_closed": {
+    "description": "无法确定会话类型、用户 ID 或工具集合结构时是否默认拒绝",
+    "type": "bool",
+    "default": true
+  }
+}
